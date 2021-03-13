@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="form-container">
+	<div class="form-title"><h2>Title</h2></div>
+	<div class="form-text"></div>
+		<form method='POST'>
+			{% csrf_token %}{{ form.as_p }}
+				<input type="text" name="user-username" placeholder="Username">
+				<input type="password" name="user-password" placeholder="Password">
+				<input type="submit" name="submit" value="Send">
+				<p>Dont have an account? <a href="{% url 'accounts:register' %}">Register</a></p>
+				<p><a href="{% url 'reset_password' %}">Forgot password?</a></p>
+		</form>
+	</div>
+</div>
+{% endblock %}

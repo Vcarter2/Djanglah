@@ -1,0 +1,12 @@
+{% include 'index.html' %}
+{% block content %}
+<div id="page-container">
+    <div class="blog-container">
+        {% for blog in object_list %}
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.content}}</p>
+        <p>{{blog.timestamp}}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

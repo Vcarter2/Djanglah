@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% for message in messages %}
+<h4>{{message}}</h4>
+{% endfor %}
+
+<form method='POST' enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" name="submit" value="Send">
+</form>
+
+{% endblock %}

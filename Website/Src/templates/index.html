@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	{% block title %}
+	<title>Website</title>
+	{% endblock %}
+
+	<!-- Personal CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+	<!-- Font Awesome -->
+	<script type="text/javascript" src="https://kit.fontawesome.com/f417ad724e.js" crossorigin="anonymous"></script>
+
+	<!-- Google Fonts Roboto -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+</head>
+
+<body>
+	<div id = "page-container">
+		<div id = "content-wrap">
+			{% include 'navbar.html' %}
+			{% block content %}
+			{% endblock %}
+			{% include 'footer.html'%}
+		</div>
+	</div>
+	
+</body>
+
+<!-- Personal JS -->
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</html>
